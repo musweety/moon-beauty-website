@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>商品详情 - MOON家居</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="header">
+  <div class="container header-inner">
+    <a href="index.html" class="logo">MOON<span>家居</span></a>
+    <button class="menu-toggle" onclick="document.querySelector('.nav').classList.toggle('open')">☰</button>
+    <nav class="nav">
+      <a href="index.html">首页</a>
+      <a href="products.html">全部商品</a>
+      <a href="contact.html">联系TA</a>
+    </nav>
+  </div>
+</header>
+
+<section class="detail-page">
+  <div class="container">
+    <div class="breadcrumb">
+      <a href="index.html">首页</a> / <a href="products.html">全部商品</a> / <span id="breadcrumbName">商品详情</span>
+    </div>
+    <div class="detail-wrap">
+      <div class="detail-gallery">
+        <div class="gallery-main">
+          <img id="productImage" src="" alt="" class="main-img">
+          <button class="gallery-nav prev" onclick="galleryPrev()">‹</button>
+          <button class="gallery-nav next" onclick="galleryNext()">›</button>
+        </div>
+        <div class="gallery-thumbs" id="galleryThumbs"></div>
+      </div>
+      <div class="detail-info">
+        <h1 id="productName"></h1>
+        <div class="detail-price" id="productPrice"></div>
+        <div class="detail-meta" id="productMeta"></div>
+        <div class="detail-desc">
+          <p id="productDesc" style="font-weight:600;color:var(--text);margin-bottom:8px"></p>
+          <p id="productLongDesc" style="white-space:pre-line"></p>
+        </div>
+        <div class="detail-actions">
+          <a id="buyNow" href="#" class="btn">立即询价</a>
+          <a id="contactAbout" href="#" class="btn btn-sm" style="background:var(--primary)">联系TA</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h4>MOON家居</h4>
+        <p>专业美容椅、家居沙发椅制造商。<br>源头工厂直供，支持定制批发。</p>
+      </div>
+      <div class="footer-col">
+        <h4>快速链接</h4>
+        <a href="products.html?category=beauty">美容椅</a>
+        <a href="products.html?category=home">家居沙发椅</a>
+        <a href="contact.html">联系TA</a>
+      </div>
+      <div class="footer-col">
+        <h4>产品分类</h4>
+        <a href="products.html?category=beauty">美容椅系列</a>
+        <a href="products.html?category=home">家居沙发椅系列</a>
+      </div>
+      <div class="footer-col">
+        <h4>联系方式</h4>
+        <a href="contact.html">在线咨询</a>
+        <a href="contact.html">合作洽谈</a>
+        <a href="contact.html">定制需求</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      © 2026 MOON家居 版权所有
+    </div>
+  </div>
+</footer>
+
+<script src="js/products.js"></script>
+<script>loadProductDetail();</script>
+</body>
+</html>

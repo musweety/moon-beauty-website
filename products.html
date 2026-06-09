@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>全部商品 - MOON家居</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="header">
+  <div class="container header-inner">
+    <a href="index.html" class="logo">MOON<span>家居</span></a>
+    <button class="menu-toggle" onclick="document.querySelector('.nav').classList.toggle('open')">☰</button>
+    <nav class="nav">
+      <a href="index.html">首页</a>
+      <a href="products.html" class="active">全部商品</a>
+      <a href="contact.html">联系TA</a>
+    </nav>
+  </div>
+</header>
+
+<section class="products-section">
+  <div class="container">
+    <div class="section-title">
+      <h2>全部商品</h2>
+      <p>精选优质产品，源头工厂直供</p>
+    </div>
+    <div class="products-header">
+      <div class="product-filters">
+        <button class="filter-btn active" data-filter="all">全部</button>
+        <button class="filter-btn" data-filter="beauty">美容椅</button>
+        <button class="filter-btn" data-filter="home">家居沙发椅</button>
+      </div>
+    </div>
+    <div class="product-grid" id="productGrid"></div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h4>MOON家居</h4>
+        <p>专业美容椅、家居沙发椅制造商。<br>源头工厂直供，支持定制批发。</p>
+      </div>
+      <div class="footer-col">
+        <h4>快速链接</h4>
+        <a href="products.html?category=beauty">美容椅</a>
+        <a href="products.html?category=home">家居沙发椅</a>
+        <a href="contact.html">联系TA</a>
+      </div>
+      <div class="footer-col">
+        <h4>产品分类</h4>
+        <a href="products.html?category=beauty">美容椅系列</a>
+        <a href="products.html?category=home">家居沙发椅系列</a>
+      </div>
+      <div class="footer-col">
+        <h4>联系方式</h4>
+        <a href="contact.html">在线咨询</a>
+        <a href="contact.html">合作洽谈</a>
+        <a href="contact.html">定制需求</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      © 2026 MOON家居 版权所有
+    </div>
+  </div>
+</footer>
+
+<script src="js/products.js"></script>
+<script>
+  const params = new URLSearchParams(location.search);
+  const cat = params.get('category') || 'all';
+  document.querySelectorAll('.filter-btn').forEach(b => {
+    b.classList.toggle('active', b.dataset.filter === cat);
+  });
+  renderProducts('productGrid', cat);
+  initFilters();
+</script>
+</body>
+</html>
